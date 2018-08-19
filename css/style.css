@@ -1,11 +1,25 @@
-/****** IMPORTS *******/
 /*
 MEMO:
     font-family: 'Dancing Script', cursive;
     font-family: 'Roboto', sans-serif;
-    color: #ff5050;
+
+  Color Scheme
+    Header - always white
+
+    Background colors & Text
+      Dark (bg & text): #2c363f
+      Lighter (bg): #d7d9d7
+      Light (bg): #eff1f3
+      Light text: #fff
+
+    Accent colors
+      First: #ff5050
+      Second: #06d6a0
 
 */
+
+/****** IMPORTS *******/
+
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700|Roboto:400,400i,700,700i');
 
 /****** Defaults & Resets *******/
@@ -31,8 +45,8 @@ menu, nav, output, section, mark, audio, video {
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  background-color: #f2f2f2;
-  color:#333;
+  background-color: #eff1f3;
+  color: #2c363f;
   font-size: 14px;
 }
 img {
@@ -66,12 +80,19 @@ Specific use-case with side by side articles:
 .flex {
   display: flex;
 }
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
 .flex-centered {
   justify-content: center;
   align-items: center;
 }
 .flex-spaced {
   justify-content: space-around;
+}
+.col1, .col2, .col3, .col4, .col5, .col6 {
+  margin: 0 10px 10px 10px;
 }
 .col6 {
   flex: 0, 0, calc(100% / 6 * 6);
@@ -84,7 +105,6 @@ Specific use-case with side by side articles:
 }
 .col3 {
   flex: 0, 0, calc(100% / 6 * 3);
-  margin: 0 10px;
 }
 .col2 {
   flex: 0, 0, calc(100% / 6 * 2);
@@ -100,9 +120,6 @@ Specific use-case with side by side articles:
   }
   .flex-centered {
     text-align: center;
-  }
-  .col1, .col2, .col3, .col4, .col5, .col6 {
-    margin-bottom: 10px;
   }
 }
 
@@ -147,7 +164,7 @@ Specific use-case with side by side articles:
   display: block;
 }
 .main-nav a:hover, .main-nav a:focus {
-  color: limegreen;
+  color: #06d6a0;
   font-weight: bold;
 }
 .header-contact_data {
@@ -246,5 +263,29 @@ Page ***/
   background-image: url(../img/hero_bg.jpg);
   background-position: center;
   background-size: cover;
-  height: 75vh;
+}
+.title_script {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  line-height: 1;
+  padding:  10rem 2rem 2rem 2rem;
+  font-size: 10rem;
+  text-align: center;
+  text-shadow: 2px 0 25px rgba(255, 0, 0, 0.5);
+}
+.main-lead {
+  font-size: 1.7em;
+  line-height: 1.2;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 10rem;
+}
+.main-lead > span {
+  display: block;
+}
+.main-lead > span > span {
+  background-color: #fff;
+  color: #06d6a0;
+  border-radius: 10%;
+  padding: 0 5px;
 }
