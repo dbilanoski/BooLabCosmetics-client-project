@@ -77,12 +77,17 @@ Specific use-case with side by side articles:
   height: 100%;
   margin: 0 auto;
 }
-.flex {
+
+/*Row Containers*/
+.flex-row {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .flex-column {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 }
 .flex-centered {
   justify-content: center;
@@ -91,31 +96,33 @@ Specific use-case with side by side articles:
 .flex-spaced {
   justify-content: space-around;
 }
-.col1, .col2, .col3, .col4, .col5, .col6 {
+
+/*Square Columns*/
+.col-sq-1, .col-sq-2, .col-sq-3, .col-sq-4, .col-sq-5, .col-sq-6 {
   margin: 0 10px 10px 10px;
 }
-.col6 {
-  flex: 0, 0, calc(100% / 6 * 6);
+.col-sq-6 {
+  flex: 0 0 calc(100% / 6 * 6);
 }
-.col5 {
-  flex: 0, 0, calc(100% / 6 * 5);
+.col-sq-5 {
+  flex: 0 0 calc(100% / 6 * 5);
 }
-.col4 {
-  flex: 0, 0, calc(100% / 6 * 4);
+.col-sq-4 {
+  flex: 0 0 calc(100% / 6 * 4);
 }
-.col3 {
-  flex: 0, 0, calc(100% / 6 * 3);
+.col-sq-3 {
+  flex: 0 1 calc(100% / 6 * 3);
 }
-.col2 {
-  flex: 0, 0, calc(100% / 6 * 2);
+.col-sq-2 {
+  flex: 0 0 calc(100% / 6 * 2);
 }
-.col1 {
-  flex: 0, 0, calc(100% / 6 * 1);
+.col-sq-1 {
+  flex: 0 0 calc(100% / 6 * 1);
 }
 
 @media screen and (max-width: 640px) {
 
-  .flex {
+  .flex-row {
     flex-direction: column;
   }
   .flex-centered {
@@ -123,15 +130,30 @@ Specific use-case with side by side articles:
   }
 }
 
-/*** Other ***/
+/*Fractional Columns*/
+.col-fr-25 {
+  flex: 0 0 calc(100% / 4);
+}
+.col-fr-50 {
+  flex: 0 0 calc(100% / 2);
+}
+
+/*** Image Modifiers ***/
 .bleacher {
   background-color: rgba(255,255,255,0.6);
   width: 100%;
   height: 100%;
 }
-/****** Styles *******/
+
+/*** Typography ***/
+
+
+/****** Main
+Styles *******/
 .main-content {
   margin-left: 135px;
+  height: auto;
+  overflow: hidden;
 }
 @media screen and (max-width: 775px) {
   .main-content {
@@ -139,7 +161,7 @@ Specific use-case with side by side articles:
   }
 }
 /*** Header ***/
-.main.header {
+.main-header {
   position: relative;
 }
 .main-header header {
@@ -151,6 +173,7 @@ Specific use-case with side by side articles:
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.3);
 }
 .logo {
   padding: 25px 0;
@@ -258,7 +281,7 @@ Specific use-case with side by side articles:
 }
 
 /*** Landing
-Page ***/
+Section ***/
 .main-landing_page {
   background-image: url(../img/hero_bg.jpg);
   background-position: center;
@@ -267,15 +290,15 @@ Page ***/
 .title_script {
   font-family: 'Dancing Script', cursive;
   color: white;
-  line-height: 1;
-  padding:  10rem 2rem 2rem 2rem;
+  line-height: 0.8;
+  padding:  10rem 4rem 4rem 4rem;
   font-size: 10rem;
   text-align: center;
   text-shadow: 2px 0 25px rgba(255, 0, 0, 0.5);
 }
 .main-lead {
   font-size: 1.7em;
-  line-height: 1.2;
+  line-height: 1.3;
   color: #fff;
   text-align: center;
   padding-bottom: 10rem;
@@ -289,3 +312,26 @@ Page ***/
   border-radius: 10%;
   padding: 0 5px;
 }
+
+@media screen and (max-width: 1200px) {
+  .title_script {
+    font-size: 7rem;
+  }
+  .title_script > span {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .title_script {
+    font-size: 5rem;
+    padding: 5rem 4rem 2rem 4rem;
+  }
+  .main-lead {
+    font-size: 1rem;
+    padding-bottom: 5rem;
+  }
+}
+
+/*** About
+Section ***/
