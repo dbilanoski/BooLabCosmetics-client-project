@@ -20,6 +20,9 @@ MEMO:
       First: #ff5050
       Second: #06d6a0
 
+    Alternatives:
+      light text & bg: #f7f9fc
+
 */
 
 /****** IMPORTS *******/
@@ -45,10 +48,14 @@ menu, nav, output, section, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
+::selection {
+  background: #ff5050;
+  color: #fff;
+}
 body {
   font-family: 'Raleway', sans-serif;
   line-height: 1.6;
-  background-color: #eff1f3;
+  background-color: #f3f4f6;
   color: #2c363f;
   font-size: 16px;
 }
@@ -199,9 +206,9 @@ p {
 .script-title {
   font-family: 'Parisienne', cursive;
   color: white;
-  line-height: 0.8;
-  padding-bottom: 4rem;
-  font-size: 9rem;
+  line-height: 1;
+  padding-bottom: 2rem;
+  font-size: 4rem;
   text-align: center;
 }
 .script-subtitle {
@@ -423,6 +430,8 @@ Section ***/
 .product-section_intro {
   padding-bottom: 2rem;
 }
+
+/*Product card outer*/
 .product-card {
   height: 150px;
   width: calc(75% - 15px);
@@ -446,13 +455,13 @@ Section ***/
   align-self: flex-end;
 }
 
+/*Product card inner*/
 .product-card_image {
   background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
   align-items: flex-start;
 }
-
 .card-1 .product-card_image {
   background-image: url(../img/products/products_bodybutters.jpg);
 }
@@ -467,9 +476,11 @@ Section ***/
   background-image: url(../img/products/products_lipbalms.jpg);
   order: 2;
 }
-
+.product-card_description > h2 {
+  padding: 0;
+}
 .product-card_hidden {
-  background-color:;
+  /* background-color:#eff1f3; */
   position: absolute;
   top: 0;
   bottom: 0;
@@ -485,6 +496,8 @@ Section ***/
 .product-card_content {
   transition: ease-in-out 500ms;
 }
+
+/*Product card inner animation*/
 .product-card:hover .product-card_hidden {
   transform: translateX(0);
 }
@@ -497,17 +510,16 @@ Section ***/
 .product-card:nth-of-type(even):hover .product-card_content {
   transform: translateX(33.3%);
 }
-.product-card_description > h2 {
-  padding: 0;
-}
+
 
 /*** Key Values
 Section ***/
 .main-values_section {
-  background-color: #fff;
+  background-color: ;
 }
 .main-values_intro p {
   padding-bottom: 1em;
+  text-align: center;
 }
 .value-body {
   text-align: center;
@@ -521,12 +533,17 @@ Section ***/
 
 /*** About
 Section ***/
-
+.main-about_section {
+  background-color: #6b7278;
+}
 .main-about_section .script-subtitle {
   color: #fff;
   font-size: 3.5rem;
   line-height: 1.2;
   text-align: right;
+}
+.main-about_section .text-paragraph {
+  color: #fff;
 }
 .about-section_left {
   background-image: url(../img/about_block_1b.jpg);
@@ -550,8 +567,13 @@ Section ***/
   box-shadow: 2px 5px 5px grey;
   margine ugasiti kada cols pada na single*/
 
-/*** About
-Section ***/
+
+
+/***
+
+# Products page styles #
+
+***/
 
 .main-promo_block {
   background-image: url(../img/promo_block1.jpg);
