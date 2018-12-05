@@ -1,6 +1,7 @@
 // MOBILE NAVIGATION
 
 const mobileBtn = document.querySelector('.mobile-toggle');
+const mobileBtnInner = document.querySelector('.mobile-toggle_bars');
 const navBar = document.querySelector('.mobile-nav');
 
 //Event Listeners
