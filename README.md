@@ -9,7 +9,7 @@ This was my first project and a real way for me to learn and explore basic web t
 - Custom six columns Flexbox grid.
 - Contact form using Google Apps Mail for sending e-mails, learn more [here.](https://github.com/dwyl/learn-to-send-email-via-google-script-html-no-server)
 - Responsive design with vertical side navigation bar.
-- Basic Vanila JS for
+- Basic Vanilla JS for
   - parallax effects
   - simple image slider
   - contact form handler
