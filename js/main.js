@@ -11,7 +11,7 @@ mobileBtn.addEventListener('click', mobileToggle);
 
 function mobileToggle() {
   window.addEventListener('click', outsideClick)
-  if (mobileBtn.classList[1] === 'is-open' && navBar.classList[1] === 'is-open') {
+  if (mobileBtn.classList[1] === 'is-open' && navBar.classList[2] === 'is-open') {
     mobileBtn.classList.remove('is-open');
     navBar.classList.remove('is-open');
   } else {
@@ -32,6 +32,52 @@ function mobileToggle() {
 const footerDate = document.getElementsByClassName('footer-date')[0];
 let date = new Date().getFullYear();
 footerDate.innerText = date;
+
+// NAVIGATION CURRENT LINK STYLES
+
+//Set default where page links are highlighted based on page you are on
+
+document.querySelectorAll(".navigation a[href='" + window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] + "']").forEach(current => {
+  current.classList.add("nav-current");
+})
+
+const sections = document.querySelectorAll("section[id]");
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+  if (sections.length > 0) {
+    let scrollY = window.pageYOffset;
+    
+    sections.forEach(current => {
+      const sectionTop = current.offsetTop - 50;
+      const sectionHeight = current.offsetHeight;
+      const sectionId = current.getAttribute("id");
+
+      if (
+        scrollY > sectionTop &&
+        scrollY <= sectionHeight + sectionTop
+        ) {
+          document.querySelectorAll(".navigation a").forEach(current => {
+            current.classList.remove("nav-current");
+          });
+          document.querySelectorAll(".navigation a[href*=" + sectionId + "]").forEach(current => {
+            current.classList.add("nav-current");
+          }); 
+      } else {
+          document.querySelectorAll(".navigation a[href*=" + sectionId + "]").forEach(current => {
+          current.classList.remove("nav-current");
+        });
+      }
+    });
+    if (document.querySelectorAll(".nav-current").length < 1) {
+    document.querySelectorAll(".navigation a[href='" + window.location.pathname.split("/")[window.location.pathname.split("/").length - 1] + "']").forEach(current => {
+      current.classList.add("nav-current");
+      })
+    }
+  }
+}
+//testiraj mobilni nav
+//dodaj .split(".")[0] za live stranicu
 
 // PARALLAX EFFECTS
 
@@ -122,54 +168,53 @@ function runParallax() {
 
 // PRODUCTS PAGE PROMO BLOCK SLIDER
 
-let sliderBlocks = document.querySelectorAll('.promo-block');
-let currentBlock = 0;
-let time = 1000;
-const arrowLeft = document.querySelector('.arrow-left');
-const arrowRight = document.querySelector('.arrow-right');
+function promoSlider(){
+  if (document.URL.includes("proizvodi")){
 
-//Reset function (clear all blocks)
-function reset(){
-  for(let i = 0; i < sliderBlocks.length; i++){
-    sliderBlocks[i].style.display = 'none';
+    let sliderBlocks = document.querySelectorAll('.promo-block');
+    let currentBlock = 0;
+    let time = 1000;
+    const arrowLeft = document.querySelector('.arrow-left');
+    const arrowRight = document.querySelector('.arrow-right');
+
+    //Reset function (clear all blocks)
+    function reset(){
+      for(let i = 0; i < sliderBlocks.length; i++){
+        sliderBlocks[i].style.display = 'none';
+      }
+    }
+
+    //Init Slider
+    function startSlide(){
+      reset();
+      sliderBlocks[0].style.display = 'block';
+    }
+
+    //Arrow buttons functions
+    function slideLeft(){
+      reset();
+      sliderBlocks[currentBlock - 1].style.display = 'block';
+      currentBlock--;
+    }
+    function slideRight(){
+      reset();
+      sliderBlocks[currentBlock + 1].style.display = 'block';
+      currentBlock++;
+    }
+    arrowLeft.addEventListener('click',function(){
+      if (currentBlock === 0) {
+        currentBlock = sliderBlocks.length;
+      }
+      slideLeft()
+    })
+    arrowRight.addEventListener('click', function(){
+      if (currentBlock === sliderBlocks.length -1) {
+        currentBlock = -1;
+      }
+      slideRight();
+    })
+
+    startSlide();
   }
 }
-
-//Init Slider
-function startSlide(){
-  reset();
-  sliderBlocks[0].style.display = 'block';
-  // if (currentBlock < sliderBlocks.length - 1) {
-  //   currentBlock++;
-  // } else {
-  //   currentBlock = 0;
-  // }
-  // setTimeout(startSlide(), time);
-  // //ne radi, vidjeti što generira infinite loop
-}
-
-//Arrow buttons functions
-function slideLeft(){
-  reset();
-  sliderBlocks[currentBlock - 1].style.display = 'block';
-  currentBlock--;
-}
-function slideRight(){
-  reset();
-  sliderBlocks[currentBlock + 1].style.display = 'block';
-  currentBlock++;
-}
-arrowLeft.addEventListener('click',function(){
-  if (currentBlock === 0) {
-    currentBlock = sliderBlocks.length;
-  }
-  slideLeft()
-})
-arrowRight.addEventListener('click', function(){
-  if (currentBlock === sliderBlocks.length -1) {
-    currentBlock = -1;
-  }
-  slideRight();
-})
-
-startSlide();
+promoSlider();
