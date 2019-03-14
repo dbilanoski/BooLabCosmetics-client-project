@@ -64,6 +64,7 @@ body {
   color: #2c363f;
   font-size: 16px;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 640px) {
@@ -1164,6 +1165,10 @@ footer a:hover, footer a:focus {
 .footer-copy_outro {
   padding-top: 10px;
   border-top: 1px solid #6b7278;
+}
+
+.footer-copy_outro > h2 {
+  padding-top: 0.2rem;
 }
 
 @media screen and (max-width: 640px) {

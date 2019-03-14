@@ -41,6 +41,13 @@ document.querySelectorAll(".navigation a[href='" + window.location.pathname.spli
   current.classList.add("nav-current");
 })
 
+// For production, when using shortened links without .html, use this selector here and bellow: 
+/*
+document.querySelectorAll(".navigation a[href='" + window.location.pathname + "']").forEach(current => {
+  current.classList.add("nav-current");
+})
+*/
+
 const sections = document.querySelectorAll("section[id]");
 window.addEventListener("scroll", navHighlighter);
 
@@ -76,8 +83,6 @@ function navHighlighter() {
     }
   }
 }
-//testiraj mobilni nav
-//dodaj .split(".")[0] za live stranicu
 
 // PARALLAX EFFECTS
 
