@@ -12,6 +12,7 @@ This was my first project and a real way for me to learn and explore basic web t
 - Basic Vanilla JS for
   - parallax effects
   - simple image slider
+  - on-scroll navigation links highlight
   - contact form handler
   - mobile navigation toggle.
 
