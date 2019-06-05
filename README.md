@@ -16,5 +16,5 @@ This was my first project and a real way for me to learn and explore basic web t
   - contact form handler
   - mobile navigation toggle.
 
-### Acknowledgments
+## Acknowledgments
 Thanks to [dwyl](https://github.com/dwyl) for tut on how to handle contact form for sending an e-mail using Google script without the need for backend server.
