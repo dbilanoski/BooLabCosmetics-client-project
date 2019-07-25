@@ -332,6 +332,10 @@ article h3+p:first-of-type {
   padding: 0 5px;
 }
 
+.color-red {
+  color: #ff5050;
+}
+
 /*** Buttons ***/
 .button {
   display: inline-block;
@@ -1392,6 +1396,10 @@ footer a:hover, footer a:focus {
   background-color: #fff;
   -webkit-animation: slideIn 1000ms;
           animation: slideIn 1000ms;
+}
+
+.promo-block_temp {
+  background-image: url(../img/products_page/promo_block_shimmer_sale.jpg);
 }
 
 .promo-block_1 {
