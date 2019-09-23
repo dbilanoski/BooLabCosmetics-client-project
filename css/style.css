@@ -57,6 +57,10 @@ menu, nav, output, section, mark, audio, video {
   color: #fff;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
   line-height: 1.6;
@@ -64,7 +68,6 @@ body {
   color: #2c363f;
   font-size: 16px;
   overflow-x: hidden;
-  scroll-behavior: smooth;
 }
 
 @media screen and (max-width: 640px) {
