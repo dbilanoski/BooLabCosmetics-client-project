@@ -23,7 +23,7 @@ MEMO:
 
 */
 /****** IMPORTS *******/
-@import url('https://fonts.googleapis.com/css?family=Parisienne|Crushed|Raleway:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:700|Parisienne|Crushed|Raleway:300,400,700');
 
 /****** Defaults & Resets *******/
 *, *::before, *::after {
@@ -709,18 +709,26 @@ Section ***/
 }
 
 .card-3 .product-card_image {
-  background-image: url(../img/products/products_beardkit.jpg);
+  background-image: url(../img/products/products_youngsters.jpg);
 }
 
 .card-4 .product-card_image {
-  background-image: url(../img/products/products_bathbombs.jpg);
+  background-image: url(../img/products/products_beardkit.jpg);
   -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
+  -ms-flex-order: 2;
+      order: 2;
 }
 
 .card-5 .product-card_image {
+  background-image: url(../img/products/products_bathbombs.jpg);
+ 
+}
+
+.card-6 .product-card_image {
   background-image: url(../img/products/products_presents.jpg);
+  -webkit-box-ordinal-group: 3;
+  -ms-flex-order: 2;
+      order: 2;
 }
 
 .product-card_description>h2 {
@@ -782,6 +790,17 @@ Section ***/
 
 .product-card_accent .text-paragraph, .product-card_accent .script-subtitle {
   color: #d7d9d7;
+}
+
+/* Product card with accent2*/
+.product-card_accent2 {
+  background-color: #06d6a0;
+  border: none;
+}
+
+.product-card_accent2 .script-subtitle {
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
 }
 
 /*Product card inner animation*/
@@ -1499,6 +1518,23 @@ footer a:hover, footer a:focus {
 .products-body_hair, .products-beard, .custom-prezents {
   background-color: #fff;
 }
+
+/* Youngsters care accent section */
+.products-youngsters {
+  background-color: #06d6a0;
+}
+
+.products-youngsters p,
+.products-youngsters li {
+  color: inherit;
+}
+
+.products-youngsters .script-subtitle {
+  font-family: 'Amatic SC', cursive;
+  font-weight: 700;
+}
+
+/* Youngsters care accent section end*/
 
 .products-image {
   width: 100%;
