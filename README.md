@@ -1,7 +1,9 @@
 # BooLab Natural Cosmetics Website Project
 Website brochure built from scratch for handmade cosmetics home business featuring custom Flexbox grid system, contact form for sending e-mails without a backend server using Google Apps Mail and a design with vertical side navigation bar.
 
-You can see the website live here: [boolab.hr](https://boolab.hr/)
+## Decommissioned on 16th of March, 2021.
+Preview available [here] (https://optimistic-davinci-36baa2.netlify.app/)
+~~You can see the website live here: [boolab.hr](https://boolab.hr/)~~
 
 This was my first project and a real way for me to learn and explore basic web technologies while helping friend with a web solution for her cosmetics store.
 
